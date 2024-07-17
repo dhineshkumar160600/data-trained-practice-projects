@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         function loginvalidation(){
+            var db={'Dhinesh':'Dhinesh@2000','Kamalesh':'Kamalesh@2003','Jaya':'Jaya@1999'}
+            var username=document.getElementById("user").value
+            var password=document.getElementById("pass").value
+            var name=Object.keys(db)
+            var flag=false
+            for(var i=0;i<name.length;i++){
+                if(username==name[i]){
+                    if(password==db[username]){
+                        flag=true
+                    }
+                }
+            }
+            if(flag==true){
+                window.location.href="./music moviehome.html"
+            }
+            else{
+                document.getElementById("error").innerHTML="invalid username or incorrect password"
+            }
+         }
+    </script>
+    <style>
+        body{
+            margin: 0px;
+            padding:0px;
+            background-image: url("backround01.jpg");
+            background-color: #543310;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        fieldset{
+            width: 400px;
+            height: 400px;
+            background-color:#AF8F6F ;
+            border-radius: 10PX;
+            
+            
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #head{
+            
+            margin-left:420px ;
+            margin-top: 70px;
+        }
+        #job{
+            text-align: center;
+            margin-top: 30px;
+            
+        }
+        input{
+            border-radius: 10px;
+            width: 250px;
+            height: 30px;
+           
+        }#error{
+            color: blue;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+   <div id="head">
+    <fieldset>
+        <h1 style="text-align: center;color:#F8F4E1;border-top-left-radius: 20px;border-top-right-radius: 20px;">SPOTSTAR</h1>
+        <div id="job">
+            
+        <input style="border-radius: 5px;padding-left: 10px;background-color: aqua;" type="text" placeholder="Phonenumber,username or email" id="user"><br><br>
+        <input style="border-radius: 5px;padding-left: 10px;background-color: aqua;" type="text" placeholder="password" id="pass"><br><br>
+        <a style="text-decoration: none;color: blue;" href="../CLASS PROJECT/forget password.html">forget password?</a><br><br>
+        <input  style="background-color: #0AC17D;border-radius: 10px;font-weight: bold;" type="button"  value="LOG IN" onclick="loginvalidation()"><br>
+        <p id="error"></p>
+        <h4 ">ARE YOU NEW USER?</h4><br>
+        <a   href="../CLASS PROJECT/SIGNUP.HTML"><input style="background-color: #0AC17D;font-weight: bold; border-radius: 10px;"    type ="button" value="SIGN UP"></a>
+        </div>
+       </fieldset>
+   </div>
+</body>
+</html>
